@@ -13,6 +13,9 @@ export async function fetcher<T>(
   params?: QueryParams,
   revalidate: number = 60
 ): Promise<T> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10_000);
+
   const url = qs.stringifyUrl(
     {
       url: `${BASE_URL}/${endpoint}`,
@@ -24,13 +27,24 @@ export async function fetcher<T>(
     }
   );
 
-  const response = await fetch(url, {
-    headers: {
-      'x-cg-pro-api-key': API_KEY,
-      'Content-Type': 'application/json',
-    } as Record<string, string>,
-    next: { revalidate },
-  });
+  let response: Response;
+  try {
+    response = await fetch(url, {
+      headers: {
+        'x-cg-pro-api-key': API_KEY,
+        'Content-Type': 'application/json',
+      } as Record<string, string>,
+      next: { revalidate },
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if ((error as Error).name === 'AbortError') {
+      throw new Error('CoinGecko request timed out.');
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (!response.ok) {
     const errorBody: CoinGeckoErrorBody = await response

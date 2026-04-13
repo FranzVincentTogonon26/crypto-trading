@@ -1,9 +1,15 @@
 import Image from 'next/image';
 
 import { fetcher } from '@/lib/actions/coingecko.actions';
+import { CoinOverviewFallback } from './Fallback';
 
 const CoinOverview = async () => {
-  const coin = await fetcher<CoinDetailsData>('coins/bitcoin');
+  let coin: CoinDetailsData;
+  try {
+    coin = await fetcher<CoinDetailsData>('coins/bitcoin');
+  } catch {
+    return <div id="coin-overview">Unable to load coin data right now.</div>;
+  }
 
   return (
     <div id="coin-overview">
