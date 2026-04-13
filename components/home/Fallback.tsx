@@ -1,0 +1,57 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+
+export function CoinOverviewFallback() {
+  return (
+    <div id="coin-overview-fallback">
+      <div className="header pt-2">
+        <div className="header-image skeleton" />
+        <div className="info">
+          <div className="header-line-sm skeleton" />
+          <div className="header-line-lg skeleton" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function TrendingCoinsFallback() {
+  return (
+    <div id="trending-coins-fallback">
+      <h4>Trending Coins</h4>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Name</TableHead>
+            <TableHead>24h Change</TableHead>
+            <TableHead className="text-right">Price</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <TableRow key={index}>
+              <TableCell className="name-cell">
+                <div className="name-link">
+                  <div className="name-image skeleton" />
+                  <div className="name-line skeleton" />
+                </div>
+              </TableCell>
+              <TableCell className="change-cell">
+                <div className="change-line skeleton" />
+              </TableCell>
+              <TableCell className="price-cell">
+                <div className="price-line skeleton" />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}

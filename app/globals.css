@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -313,10 +313,10 @@
   }
 
   #trending-coins {
-    @apply w-full flex flex-col justify-center h-full py-4 bg-dark-500 rounded-xl;
+    @apply w-full flex flex-col h-full py-4 bg-dark-400 rounded-xl;
 
     h4 {
-      @apply text-xl md:text-2xl font-semibold mb-2 px-5;
+      @apply font-semibold text-2xl px-4;
     }
 
     .trending-coins-table {
@@ -413,7 +413,7 @@
   }
 
   #coin-overview-fallback {
-    @apply w-full h-full xl:col-span-2 px-2 bg-dark-500 rounded-xl;
+    @apply w-full flex flex-col h-full py-4 bg-dark-400 rounded-xl;
 
     .header {
       @apply flex-1 mb-2 flex gap-2 md:gap-3;
@@ -813,13 +813,13 @@
   }
 
   #coin-overview {
-    @apply w-full h-full xl:col-span-2 px-2 bg-dark-500 rounded-xl;
+    @apply w-full h-full xl:col-span-2 px-2 bg-dark-500 rounded-lg;
 
     .header {
-      @apply flex-1 mb-2 flex gap-2 md:gap-3;
+      @apply flex-1 mb-2 flex gap-2 md:gap-3 items-center;
 
       img {
-        @apply w-10 h-10 md:w-14 md:h-14;
+        @apply w-10 h-10 md:w-10 md:h-10;
       }
 
       .info {
