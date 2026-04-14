@@ -12,7 +12,7 @@ export const navItems = [
   },
   {
     label: 'Search',
-    href: '/',
+    href: '/search',
   },
   {
     label: 'All Coins',
@@ -86,8 +86,11 @@ export const getChartConfig = (
     },
   },
   localization: {
-    priceFormatter: (price: number) =>
-      '$' + price.toLocaleString(undefined, { maximumFractionDigits: 2 }),
+    priceFormatter: (price: number) => {
+      const abs = Math.abs(price);
+      const maximumFractionDigits = abs >= 1 ? 2 : abs >= 0.01 ? 4 : 8;
+      return '$' + price.toLocaleString(undefined, { maximumFractionDigits });
+    },
   },
 });
 
