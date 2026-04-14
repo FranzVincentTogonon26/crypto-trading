@@ -205,10 +205,10 @@
   }
 
   #candlestick-chart {
-    @apply p-3 mt-5 rounded-lg bg-dark-500;
+    @apply p-2 rounded-lg bg-dark-500;
 
     .chart-header {
-      @apply flex flex-col gap-3 xl:flex-row xl:items-center mb-4 font-semibold text-[#e6eef8] text-[20px];
+      @apply flex flex-col gap-3 xl:flex-row xl:items-center  font-semibold text-[#e6eef8] text-[20px];
     }
 
     .button-group {
@@ -320,7 +320,7 @@
     }
 
     .trending-coins-table {
-      @apply bg-dark-500 overflow-hidden;
+      @apply bg-dark-400 overflow-hidden;
 
       .name-cell {
         @apply font-bold;
@@ -420,7 +420,7 @@
     }
 
     .header-image {
-      @apply w-10 h-10 md:w-10 md:h-10 rounded-full;
+      @apply w-10 h-10 md:w-10 md:h-10 rounded-full bg-dark-500;
     }
 
     .info {
