@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { fetcher } from '@/lib/actions/coingecko.actions';
 import CandlestickChart from '../CandlestickChart';
+import { fetcher } from '@/lib/actions/coingecko.actions';
 import { CoinOverviewFallback } from './Fallback';
 
 const CoinOverview = async () => {
