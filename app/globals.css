@@ -284,7 +284,7 @@
     }
 
     .category-cell {
-      @apply indent-4 font-semibold;
+      @apply indent-3 font-semibold;
     }
 
     .top-gainers-cell {
@@ -344,7 +344,7 @@
     }
 
     .category-cell {
-      @apply indent-1 font-semibold;
+      @apply indent-4 font-semibold;
     }
 
     .top-gainers-cell {
@@ -556,14 +556,14 @@
     }
 
     h4 {
-      @apply text-2xl;
+      @apply text-2xl font-bold;
     }
 
     .coins-table {
       @apply bg-dark-500 rounded-xl max-h-fit overflow-hidden;
 
       .rank-cell {
-        @apply pl-5 max-w-20! py-5 font-medium text-purple-100;
+        @apply indent-4 max-w-20! py-5 font-medium text-purple-100;
 
         a {
           @apply absolute inset-0 z-10;
