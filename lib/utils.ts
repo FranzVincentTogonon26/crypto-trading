@@ -83,6 +83,13 @@ export function convertOHLCData(data: OHLCData[]) {
     );
 }
 
+export function formatPrice(value: number): string {
+  return `$${value.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+}
+
 export const ELLIPSIS = 'ellipsis' as const;
 export const buildPageNumbers = (
   currentPage: number,

@@ -73,7 +73,8 @@ const Categories = async () => {
         />
       </div>
     );
-  } catch {
+  } catch (error) {
+    console.log('Error fetching categories:', error);
     return <CategoriesFallback />;
   }
 };
