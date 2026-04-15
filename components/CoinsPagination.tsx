@@ -42,7 +42,7 @@ const CoinsPagination = ({
           {pageNumbers.map((page, index) => (
             <PaginationItem key={index}>
               {page === ELLIPSIS ? (
-                <span className="ellipsis">...</span>
+                <PaginationEllipsis />
               ) : (
                 <PaginationLink
                   onClick={() => handlePageChange(page)}

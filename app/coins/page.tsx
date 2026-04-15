@@ -1,8 +1,8 @@
+import { fetcher } from '@/lib/actions/coingecko.actions';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { cn, formatPercentage, formatCurrency } from '@/lib/utils';
-import { fetcher } from '@/lib/actions/coingecko.actions';
 import DataTable from '@/components/DataTable';
 import CoinsPagination from '@/components/CoinsPagination';
 

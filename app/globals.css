@@ -284,7 +284,7 @@
     }
 
     .category-cell {
-      @apply indent-3 font-semibold;
+      @apply indent-1 font-semibold;
     }
 
     .top-gainers-cell {
